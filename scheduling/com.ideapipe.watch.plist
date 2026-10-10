@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- macOS: runs the watcher at login and restarts it if it dies.
+     1. Replace /PATH/TO/idea-pipeline (3 places) with the real folder.
+     2. cp scheduling/com.ideapipe.watch.plist ~/Library/LaunchAgents/
+     3. launchctl load ~/Library/LaunchAgents/com.ideapipe.watch.plist
+     Logs: /PATH/TO/idea-pipeline/.state/watch.log -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ideapipe.watch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/PATH/TO/idea-pipeline/.venv/bin/python</string>
+    <string>-m</string><string>ideapipe</string><string>watch</string>
+  </array>
+  <key>WorkingDirectory</key><string>/PATH/TO/idea-pipeline</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/PATH/TO/idea-pipeline/.state/watch.log</string>
+  <key>StandardErrorPath</key><string>/PATH/TO/idea-pipeline/.state/watch.log</string>
+</dict>
+</plist>

@@ -1,0 +1,13 @@
+# Names Whisper mishears. One per line. These are passed to the transcriber as a hint.
+# Copy this file to vocab.txt and replace the examples with your own names and jargon.
+# vocab.txt is git-ignored, so your real list stays private. About 30 entries is the useful ceiling.
+Notion
+Claude Code
+Whisper
+GA4
+D2C
+SEO
+AEO
+GEO
+WooCommerce
+nutraceutical
